@@ -1,12 +1,12 @@
 # movie_similarity_flask_api
 Welcome! This repo includes code to train a movie similarity model, and host it with a flask app.
-The trainign code is imported from our recommender system library. 
+The code for training the recommender model is imported from our recommender system library. 
 
 ![](https://media.giphy.com/media/eSA5lwLzcE2NW/giphy.gif)
 
 # How to train and run this service locally
 1. clone the repo to your local machine
-2. Create a conda virtual enviroment for this repo. This is just so we're all running the same versions of things. :-) You can call yur environment whatever you like. I like to use the name of the repo. 
+2. Create a conda virtual enviroment for this repo. This is just so we're all running the same versions of things. :-) 
 - `conda env create -f environment.yml`
 - `source activate movie_similarity_flask_api`
   
