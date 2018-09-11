@@ -8,15 +8,14 @@ api = Api(app)
 
 
 #load enbeddings and movie details
-text_embeddings = pd.read_pickle('data/autoencoder_embeddings.pkl')
-text_embeddings = pd.DataFrame(text_embeddings)
-ratings_embeddings = pd.read_pickle('data/movie_embeddings_1.pkl')
+text_embeddings = pd.read_pickle('data/svd_text_embeddings.pkl')
+ratings_embeddings = pd.read_pickle('data/svd_ratings_embeddings.pkl')
 movies = pd.read_csv('data/movie_demographics.csv', index_col=0)
 
 #initialize similarity model
 sm = SimilarityModel()
 
-# parse payload
+#parse payload
 parser = reqparse.RequestParser()
 parser.add_argument('movie_title')
 
