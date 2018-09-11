@@ -2,7 +2,7 @@
 Welcome! This repo includes code to train a movie similarity recommender model, and host it with a flask app. The flask app creates an entpoint anyone can use to get movie recommendations! Here is how to set it up locally on your machine and get recommendations. 
 
 ## How to clone and run this service locally
-1. clone the repo to your local machine
+1. Clone the repo to your local machine
 2. Create a conda virtual enviroment for this repo. This is just so we're all running the same versions of things. :-) 
 - `conda env create -f environment.yml`
 - `source activate movie_similarity_flask_api`
