@@ -5,7 +5,7 @@ To make a call to the hosted app and get movie recommendations, use this curl re
 
 `curl -X GET https://movie-similarity-app.herokuapp.com/ -d "movie_title=Queen of the Damned (2002)" -d "model=matrix factorization"`
 
-You can specify any movie_title you like, and the app will return the top 20 most similar movies. You can specify the model you would like to use as: `matrix factorization` or `neural_network`. 
+You can specify any movie_title you like, and the app will return the top 20 most similar movies. You can specify the model you would like to use as: `matrix factorization` or `neural network`. 
 
 Sit back and enjoy one of your recommended movies!
 
