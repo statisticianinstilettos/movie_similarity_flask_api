@@ -42,4 +42,4 @@ class SimilarityModel(object):
         #round similarity score
         sim_df_ensembled['similarity_score'] = sim_df_ensembled['similarity_score'].round(4)
 
-        return sim_df_ensembled[['title', 'genres', 'avg_rating', 'similarity_score']].head(20).T.to_dict()
+        return  sim_df_ensembled[['title', 'genres', 'avg_rating', 'similarity_score']].head(20).title.values.tolist()
