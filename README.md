@@ -2,7 +2,7 @@
 Welcome! This repo includes code to train a movie similarity recommender model and host it with a flask app. The flask app creates an endpoint anyone can use to get movie recommendations, and is currently hosted using Heroku! 
 To make a call to the hosted app and get movie recommendations, use this curl request:
 
-`curl -X GET https://movie-similarity-app.herokuapp.com/ -d movie_title='Zodiac (2007)'`
+`curl -X GET https://movie-similarity-app.herokuapp.com/ -d "movie_title=Queen of the Damned (2002)" -d "model=matrix factorization"`
 
 You can specify any movie_title you like, and the app will return the top 20 most similar movies. 
 
@@ -15,7 +15,7 @@ You can specify any movie_title you like, and the app will return the top 20 mos
 3. Run the service
 - `python app.py`
 4. Make a curl request
-- `curl -X GET http://127.0.0.1:5000/ -d movie_title='Zodiac (2007)'`
+- `curl -X GET http://127.0.0.1:5000/ -d "movie_title=Zodiac (2007)" -d "model=neural network"`
 
 You could also make requests to the serive using the `run_service.ipynb`. 
 Sit back and enjoy one of your recommended movies!
