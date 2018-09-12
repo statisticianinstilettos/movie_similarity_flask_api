@@ -1,10 +1,11 @@
 # movie_similarity_flask_api
-Welcome! This repo includes code to train a movie similarity recommender model and host it with a flask app. The flask app creates an endpoint anyone can use to get movie recommendations, and is currently hosted using Heroku! 
+Welcome! This repo includes code to train a movie similarity recommender model and host it with a flask app. The flask app creates an endpoint anyone can use to get movie recommendations, and is currently hosted using Heroku! There are two models for movie recommendations, one uses SVD matrix decomposition, the other is a deep learning method described [here](https://towardsdatascience.com/creating-a-hybrid-content-collaborative-movie-recommender-using-deep-learning-cc8b431618af).
+
 To make a call to the hosted app and get movie recommendations, use this curl request:
 
 `curl -X GET https://movie-similarity-app.herokuapp.com/ -d "movie_title=Queen of the Damned (2002)" -d "model=matrix factorization"`
 
-You can specify any movie_title you like, and the app will return the top 20 most similar movies. 
+You can specify any movie_title you like, and the app will return the top 20 most similar movies. You can specify the model you would like to use as: `matrix factorization` or `neural_network`. 
 
 
 ## How to clone and run this service locally
