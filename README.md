@@ -7,6 +7,10 @@ To make a call to the hosted app and get movie recommendations, use this curl re
 
 You can specify any movie_title you like, and the app will return the top 20 most similar movies. You can specify the model you would like to use as: `matrix factorization` or `neural_network`. 
 
+Sit back and enjoy one of your recommended movies!
+
+![](https://media.giphy.com/media/eSA5lwLzcE2NW/giphy.gif)
+
 
 ## How to clone and run this service locally
 1. Clone the repo to your local machine
@@ -18,15 +22,12 @@ You can specify any movie_title you like, and the app will return the top 20 mos
 4. Make a curl request
 - `curl -X GET http://127.0.0.1:5000/ -d "movie_title=Zodiac (2007)" -d "model=neural network"`
 
-You could also make requests to the serive using the `run_service.ipynb`. 
-Sit back and enjoy one of your recommended movies!
-
-![](https://media.giphy.com/media/eSA5lwLzcE2NW/giphy.gif)
+You could also make requests to the service using the `run_service.ipynb`. 
 
 # Data
 I used the tags and ratings data from the [MovieLens 20M Dataset](https://grouplens.org/datasets/movielens/20m/). 
 
-# Model
+# Matrix Factorization Model
 I trained an item-item collaborative recommender system using the user-movie ratings, and an item-item content recommender system using the movie tags. I then ensembled both models by averaging the cosine the similarity scores from both the collaborative and the content latent embeddings. Collaborative recommenders have popularity bias, and will only be able to accuratly recommend a small percent of the movies, while missing the meaningfull recommendations that are less popular. In the context of movie recommendatiions, the collaborative method may not do a great job recommending movies you could'nt think of on your own. The content recommender will recommend on-topic movies, but these items may have a low overall rating. The content recommender will be able to recommend new titles you may have never heard of, but match the topic of the seed_movie. By ensembing the content and collaborative methods, I've created a model that recommends movies that have been rated similarly, while still matching the style of the seed_movie. 
 
 Both models use SVD to calculate latent dimensions from the original matricies. These embeddings are used to calculate pairwise movie cosine similarity scores from each model, and the similarity scores are averaged to determine the final similarity score.
