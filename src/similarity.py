@@ -1,4 +1,3 @@
-import requests
 import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
@@ -38,6 +37,9 @@ class SimilarityModel(object):
         sim_df_ensembled = sim_df_ensembled.iloc[1:]
 
         #round average ratings
-        sim_df_ensembled['avg_rating'] = round(sim_df_ensembled['avg_rating'], 1)
+        sim_df_ensembled['avg_rating'] = sim_df_ensembled['avg_rating'].round(2)
+
+        #round similarity score
+        sim_df_ensembled['similarity_score'] = sim_df_ensembled['similarity_score'].round(4)
 
         return sim_df_ensembled[['title', 'genres', 'avg_rating', 'similarity_score']].head(20).T.to_dict()

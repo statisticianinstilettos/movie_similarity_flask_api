@@ -8,8 +8,8 @@ api = Api(app)
 
 
 #load enbeddings and movie details
-text_embeddings = pd.read_pickle('data/svd_text_embeddings.pkl')
-ratings_embeddings = pd.read_pickle('data/svd_ratings_embeddings.pkl')
+text_embeddings = pd.read_csv('data/svd_text_embeddings.csv', index_col=0)
+ratings_embeddings = pd.read_csv('data/svd_ratings_embeddings.csv', index_col=0)
 movies = pd.read_csv('data/movie_demographics.csv', index_col=0)
 
 #initialize similarity model
@@ -35,6 +35,7 @@ class MovieSimilarity(Resource):
 
         #ensemble similarity scores and return top 20 most similar movies
         output = sm.ensemble_similarity_scores(collaborative_similarity, content_similarity)
+
         return output
 
 api.add_resource(MovieSimilarity, '/')
